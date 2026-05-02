@@ -2,8 +2,6 @@
 
 Reliable outbound webhook delivery with signed payloads, retries, dead-letter handling, and manual replay.
 
-## 60-Second Overview
-
 This project is a Django REST backend that lets an application publish events and deliver them to subscribed webhook endpoints.
 
 Example events:
