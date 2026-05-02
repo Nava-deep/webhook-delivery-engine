@@ -306,24 +306,21 @@ python3 -m venv .venv
 .venv/bin/pytest
 ```
 
-## Resume Bullets
+## What Reviewers Should Notice
 
-Webhook Delivery Engine - Reliable Outbound Event Delivery Platform
+This project is meant to show practical backend engineering, not just basic CRUD endpoints. The main value is in how it handles real delivery failure cases: every webhook attempt is stored, signed, retried, inspected, and recoverable.
 
-- Built a Django REST webhook delivery engine with event subscriptions, HMAC-signed payloads, retry scheduling, delivery logs, and manual replay for failed outbound events.
-- Implemented exponential backoff, dead-letter handling, idempotent event publishing, and worker-based delivery recovery using PostgreSQL, Docker, and pytest.
+The codebase demonstrates:
 
-## What This Project Demonstrates
-
-- Backend API design
-- Worker-based async processing
-- Database-backed reliability
-- Failure handling and retry state
-- Idempotency
-- Secure webhook signatures
-- Local Docker-based demos
-- Testing and debugging
-- SDE-style product infrastructure
+- REST API design with Django REST Framework
+- Data modeling for events, webhook endpoints, and delivery attempts
+- Database-backed background processing with a simple polling worker
+- Retry scheduling, max-attempt handling, and dead-letter state
+- Idempotent event publishing to avoid duplicate delivery creation
+- HMAC-SHA256 webhook signing for subscriber verification
+- Operational debugging through delivery list/detail APIs and stats
+- Local demo tooling with Docker Compose and a configurable mock receiver
+- Behavior-focused tests using pytest and pytest-django
 
 ## Known Limitations
 
